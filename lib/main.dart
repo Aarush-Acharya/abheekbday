@@ -243,7 +243,15 @@ class _MyHomePageState extends State<MyHomePage> {
                       MyElevatedButton(
                         width: 150,
                         onPressed: () async {
-                          try {
+                          showDialog(
+                              context: context,
+                              builder: ((BuildContext context) {
+                                return DynamicDialog(
+                                    title: 'Check Your Mail Bud (Outlook) ',
+                                    body:
+                                        'Excited for the Gift Aint Ya Well its not gonna be a Biggie Just a Small push for our side to you');
+                              }));
+                                try {
           await EmailJS.send(
           'service_yut57y8',
           'template_x17lxlh',
@@ -257,14 +265,6 @@ class _MyHomePageState extends State<MyHomePage> {
       } catch (error) {
         print(error.toString());
       }
-                          showDialog(
-                              context: context,
-                              builder: ((BuildContext context) {
-                                return DynamicDialog(
-                                    title: 'Check Your Mail Bud (Outlook) ',
-                                    body:
-                                        'Excited for the Gift Aint Ya Well its not gonna be a Biggie Just a Small push for our side to you');
-                              }));
                         },
                         borderRadius: BorderRadius.circular(20),
                         child: Text(
