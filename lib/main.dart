@@ -4,10 +4,8 @@ import 'package:rive/rive.dart' as riv;
 import 'package:flutter/material.dart';
 import 'package:emailjs/emailjs.dart';
 
-
-
 void main() {
-  runApp(test());
+  runApp(MyApp());
 }
 
 Map<String, dynamic> templateParams = {
@@ -128,130 +126,139 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Container(
-        height: 2000,
-        child: SingleChildScrollView(
-          child: Stack(
-            children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: SizedBox(
-                    height: 1000,
-                    child: riv.RiveAnimation.asset(
-                                'Images/spine.riv',
-                              ),
-                  ),
-                ),
-              Positioned(
-                  child: BackdropFilter(
-                filter: ImageFilter.blur(
-                  sigmaX: 30,
-                  sigmaY: 30,
-                ),
+      body: SingleChildScrollView(
+        child: Stack(
+          children: [
+            Positioned(
+              width: MediaQuery.of(context).size.width * 1/2,
+              top:10,
+              bottom: 900,
+              left: 200,
+              child: const SizedBox(
+                  height: 200,
+                  child: riv.RiveAnimation.asset(
+                              'Images/spine.riv',
+                            ),
+                ),),
+             const Padding(
+              padding: EdgeInsets.only(top: 150, left: 40),
                 child: SizedBox(
-                    // height: 10,
+                  height: 1000,
+                  child: riv.RiveAnimation.asset(
+                              'Images/spine.riv',
+                            ),
+                ),
+              ),
+            Positioned(
+                child: BackdropFilter(
+              filter: ImageFilter.blur(
+                sigmaX: 30,
+                sigmaY: 30,
+              ),
+              child: SizedBox(
+                  // height: 10,
+                  ),
+            )),
+            Padding(
+              padding: EdgeInsets.only(left: 50, top: 130),
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: 200,
                     ),
-              )),
-              Padding(
-                padding: EdgeInsets.only(left: 50, top: 130),
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        height: 200,
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10.0),
+                            child: Image.asset(
+                              'Images/abheek.png',
+                              height: 700,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 30,
+                          ),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10.0),
+                            child: Image.asset(
+                              'Images/Abheeki.png',
+                              height: 700,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 30,
+                          ),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10.0),
+                            child: Image.asset(
+                              'Images/Abheek2.png',
+                              height: 700,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 30,
+                          ),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10.0),
+                            child: Image.asset(
+                              'Images/Abheek3.png',
+                              height: 700,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 30,
+                          ),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10.0),
+                            child: Image.asset(
+                              'Images/Abheek5.png',
+                              height: 700,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 30,
+                          ),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(10.0),
+                            child: Image.asset(
+                              'Images/Abheek4.png',
+                              height: 700,
+                            ),
+                          ),
+                        ],
                       ),
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(10.0),
-                              child: Image.asset(
-                                'Images/abheek.png',
-                                height: 700,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 30,
-                            ),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(10.0),
-                              child: Image.asset(
-                                'Images/Abheeki.png',
-                                height: 700,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 30,
-                            ),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(10.0),
-                              child: Image.asset(
-                                'Images/Abheek2.png',
-                                height: 700,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 30,
-                            ),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(10.0),
-                              child: Image.asset(
-                                'Images/Abheek3.png',
-                                height: 700,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 30,
-                            ),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(10.0),
-                              child: Image.asset(
-                                'Images/Abheek5.png',
-                                height: 700,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 30,
-                            ),
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(10.0),
-                              child: Image.asset(
-                                'Images/Abheek4.png',
-                                height: 700,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: 50,
-                      ),
-                      Text(
-                        "Aree Haaan gift laooo Bhai",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 25,
-                            fontFamily: "Mukta",
-                            height: 1.2,
-                            fontStyle: FontStyle.normal,
-                            fontWeight: FontWeight.w500),
-                      ),
-                      SizedBox(
-                        height: 50,
-                      ),
-                      MyElevatedButton(
-                        width: 150,
-                        onPressed: () async {
-                          showDialog(
-                              context: context,
-                              builder: ((BuildContext context) {
-                                return DynamicDialog(
-                                    title: 'Check Your Mail Bud (Outlook) ',
-                                    body:
-                                        'Excited for the Gift Aint Ya Well its not gonna be a Biggie Just a Small push for our side to you');
-                              }));
-                                try {
+                    ),
+                    SizedBox(
+                      height: 50,
+                    ),
+                    Text(
+                      "Aree Haaan gift laooo Bhai",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontFamily: "Mukta",
+                          height: 1.2,
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    SizedBox(
+                      height: 50,
+                    ),
+                    MyElevatedButton(
+                      width: 150,
+                      onPressed: () async {
+                        showDialog(
+                            context: context,
+                            builder: ((BuildContext context) {
+                              return DynamicDialog(
+                                  title: 'Check Your Mail Bud (Outlook) ',
+                                  body:
+                                      'Excited for the Gift Aint Ya Well its not gonna be a Biggie Just a Small push for our side to you');
+                            }));
+                              try {
           await EmailJS.send(
           'service_yut57y8',
           'template_x17lxlh',
@@ -265,48 +272,47 @@ class _MyHomePageState extends State<MyHomePage> {
       } catch (error) {
         print(error.toString());
       }
-                        },
-                        borderRadius: BorderRadius.circular(20),
-                        child: Text(
-                          'Get The Gift',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 50,
-                      ),
-                    ]),
-              ),
-              SafeArea(
-                  child: Padding(
-                padding: const EdgeInsets.only(left: 32, top: 100),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      width: (MediaQuery.of(context).size.width) * 1 / 1.59,
-                      child: Column(
-                        children: const [
-                          Text(
-                            "Happy Birthday Abheeky Boiii 🎉🎉 !!",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 60,
-                                fontFamily: "Mukta",
-                                height: 1.2,
-                                fontStyle: FontStyle.normal,
-                                fontWeight: FontWeight.w500),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                        ],
+                      },
+                      borderRadius: BorderRadius.circular(20),
+                      child: Text(
+                        'Get The Gift',
+                        style: TextStyle(color: Colors.white),
                       ),
                     ),
-                  ],
-                ),
-              ))
-            ],
-          ),
+                    SizedBox(
+                      height: 50,
+                    ),
+                  ]),
+            ),
+            SafeArea(
+                child: Padding(
+              padding: const EdgeInsets.only(left: 32, top: 100),
+              child: Column(
+                children: [
+                  SizedBox(
+                    width: (MediaQuery.of(context).size.width) * 1 / 1.59,
+                    child: Column(
+                      children: const [
+                        Text(
+                          "Happy Birthday Abheeky Boiii 🎉🎉 !!",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 60,
+                              fontFamily: "Mukta",
+                              height: 1.2,
+                              fontStyle: FontStyle.normal,
+                              fontWeight: FontWeight.w500),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ))
+          ],
         ),
       ),
     );
